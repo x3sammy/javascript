@@ -1,6 +1,6 @@
 'use strict';
 function repx(rval,val,rep,count){
-	if(time!=null){
+	if(count!=null){
 		for(var i=0;i<count;i++){
 			rval=rval.replace(val,rep);
 		};
