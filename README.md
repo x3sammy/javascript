@@ -15,3 +15,4 @@ rep: the replacing word;
 count: how many words you want to modify from the starting of the string(optional);
 
 ---
+* ##### *toUcWords.js*:- toUcWords Function allows you to make first letter of the word in upper case since, the function is missing in js.
