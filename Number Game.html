@@ -1,0 +1,128 @@
+<!Doctype HTML>
+<head>
+	<title>Number Game</title>
+	<style>
+		#newbtn{
+			padding:5px;
+			outline:0;
+			border:0px;
+			width:70px;
+			background:lightgreen;
+			color:brown;
+			font-size:14px;
+		}
+		#newbtn:hover{
+			color:white;
+			background:red;
+		}
+		#newbtn:active{
+			background:cornflowerblue;
+		}
+		#txt{
+			width:70px;
+			height:17px;
+		}
+	</style>
+</head>
+<body>
+	<div><input type='button' id='newbtn' value='Start'/></div>
+	<br/>
+	<br/>
+	<span style='font-family:tahoma;color:red;font-size:25px'>Time Left :  </span>
+	<div id='time' style='display:inline-block;color:red;font-size:25px'>5</div>
+	<span style='font-family:times new roman;color:red;font-size:25px'> Sec </span>
+		<br/>
+			<br/>
+			<div style='display:inline-block;width:100px'>
+				<span id='fval'>0 </span>
+				<span id='mvalue'>+</span>
+				<span id='lvalue'> 0</span>
+				<span> = </span>
+			</div>
+			<input type='text'id='txt' placeholder='UserInput'/>
+		<br/>
+	<br/>
+<br/>
+		<span>High Score : </span><span id='hscore'>0</span>
+</body>
+<script>
+'use strict';
+	var highscore=0;
+	var sec=5;
+	var int;
+	document.getElementById('txt').onclick=function(){
+		this.blur()
+	};
+	function value_of_Interval(){
+		int=setInterval(function(){
+			document.getElementById('txt').value='';
+			var fvalue=document.getElementById("fval");
+				var lvalue=document.getElementById('lvalue');
+					var frandom=Math.floor(Math.random()*20);
+						var lrandom=Math.floor(Math.random()*20);
+							fvalue.innerHTML=frandom;
+								lvalue.innerHTML=lrandom;	
+				    },5000);
+		};
+	function value_of_Timeout(){
+		setTimeout(function(){
+			sec=5;
+			document.getElementById('txt').value='';
+			var fvalue=document.getElementById("fval");
+				var lvalue=document.getElementById('lvalue');
+					var frandom=Math.floor(Math.random()*20);
+						var lrandom=Math.floor(Math.random()*20);
+							fvalue.innerHTML=frandom;
+								lvalue.innerHTML=lrandom;
+								value_of_Interval();
+				    },0);
+		};
+		document.getElementById('txt').onkeyup=function(event){
+			var e=event||window.event;
+			if(e.which==13){
+			clearInterval(int);
+				var fvalue=parseInt(document.getElementById("fval").innerHTML);
+					var lvalue=parseInt(document.getElementById('lvalue').innerHTML);
+								var txt=document.getElementById("txt");
+								var tot=fvalue+lvalue;
+								if(tot==txt.value){
+									highscore++;
+									sec=5;
+									document.getElementById('hscore').innerHTML=highscore;
+									txt.value='';
+										value_of_Timeout();
+								}else{
+									if(tot!=txt.value){
+										txt.value="";
+										value_of_Timeout();
+									}
+							};
+				}
+			};
+document.getElementById('newbtn').onclick=function(){	
+	this.disabled='disabled';
+	document.getElementById('txt').onclick=function(){
+		this.focus();
+	};
+	setInterval(function(){
+		var time=document.getElementById('time');
+			if(sec>0){
+				time.innerHTML=sec;
+				sec--;
+			}else{
+				time.innerHTML=sec;
+			};
+		    if(sec==0){
+				sec=5;
+			};
+	},1000);
+		!function(){
+			  var frandom=Math.floor(Math.random()*20);
+				var lrandom=Math.floor(Math.random()*10);
+				  document.getElementById('fval').innerHTML=frandom;
+					document.getElementById('lvalue').innerHTML=lrandom;
+			}();	
+value_of_Interval()
+};
+</script>
+</html>
