@@ -5,6 +5,10 @@ Simply open the choosen file in the broweser.
 
 ---
 
+* ##### *Ip Filter.js*:- Filter Any IP Addresses From the String in JavaScript.
+
+---
+
 * ##### *Number Game.html*:- This Script will let you play a number game in which you have to guess the number in the give time you can modify the time limits in case you want!
 ---
 
