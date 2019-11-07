@@ -1,0 +1,81 @@
+<Script src="jquery.js"></script>
+<Style>
+*{
+	margin:0px;
+	padding:0px;
+}
+#cont{
+	margin:auto;
+	margin-top:250px;
+	width:60px;
+	height:50px;
+	padding:15px;
+	position:relative;
+	text-align:center
+}
+#cont div{
+	position:absolute;
+	left:15px;
+}
+#div1{
+	width:15px;
+	height:15px;
+	border:1px solid black;
+	border-bottom:0px;
+	border-left:0px;
+	border-radius:0px 15px 0px 0px;
+	transform:rotate(45deg);
+	top:30px;
+	display:none;
+}
+#div2{
+	width:30px;
+	height:30px;
+	border:1px solid black;
+	border-bottom:0px;
+	border-left:0px;
+	border-radius:0px 25px 0px 0px;
+	transform:rotate(45deg);
+	left:5px;
+	top:24px;
+	display:none;
+}
+#div3{
+	display:none;
+	width:50px;
+	height:50px;
+	border:1px solid black;
+	border-bottom:0px;
+	border-left:0px;
+	border-radius:0px 45px 0px 0px;
+	transform:rotate(45deg);
+	left:30px;
+}
+
+</style>
+<div id="cont">
+ <div id="div1"></div>
+ <Div id="div2"></div>
+ <Div id="div3"></div>
+</div>
+<Script>
+function x1(){
+	var div1=document.getElementById("div1");
+	var div2=document.getElementById("div2");
+	var div3=document.getElementById("div3");
+		setTimeout(function(){
+			div1.style.display="inline-block";
+			setTimeout(function(){
+				div2.style.display="inline-block";
+				setTimeout(function(){
+					div3.style.display="inline-block";
+					setTimeout(function(){
+						$("#cont div").css({"display":"none"});
+						setTimeout(function(){x1()},100)
+					},800);
+				},800);
+			},800)
+		},800);
+	}
+x1();
+</script>
