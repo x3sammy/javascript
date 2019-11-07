@@ -1,0 +1,54 @@
+<input type="text" id="txt" />
+<input type="button" id="btn" value="Press"/>
+<br/>
+<br/>
+<input type="text" id="txt2"/>
+<input type="text" id="lname"/>
+<input type="text" id="mname"/>
+<input type="button" id="btn2" value="Press2"/>
+
+<Script>
+
+function ale(a,b,c){
+	this.a=a;
+	this.b=b;
+	this.c=c;
+};
+ale.prototype.full=function(){
+	var lname;
+		if(this.b!=undefined){
+			if(this.c!=undefined){
+				lname=this.c+" "+this.b;
+			}else{
+				lname=this.b;
+			}
+		}else{
+			lname="";
+		};
+		return "Hellow "+this.a+" "+lname;
+};
+
+document.getElementById("btn").onclick=function(){
+	var txt=document.getElementById("txt").value;
+	var newx=new ale(txt);
+	if(txt!=""){
+		alert(newx.full());
+	}else{
+		return false;
+	}
+	
+};
+
+document.getElementById("btn2").onclick=function(){
+	var txt=document.getElementById("txt2");
+	var lname=document.getElementById("lname");
+	var mname=document.getElementById("mname");
+	var newx=new ale(txt.value,mname.value,lname.value)
+	if(txt.value!=""&&lname.value!=""){
+		alert(newx.full())
+	}else{
+		alert("Fill All The Fields Properly");
+	}
+	
+}
+</script>
