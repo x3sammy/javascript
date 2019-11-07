@@ -8,6 +8,10 @@ Simply open the choosen file in the broweser.
 * ##### *Number Game.html*:- This Script will let you play a number game in which you have to guess the number in the give time you can modify the time limits in case you want!
 ---
 
+* ##### *PostViaAjax.html*:- This Script Allows you to upload any file via ajax to the server without refreshing the page.
+
+---
+
 * ##### *replace.js*:- This Script will Allow you to replace any word from the script within the counter limit.
 
 example:-
