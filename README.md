@@ -12,6 +12,10 @@ Simply open the choosen file in the broweser.
 * ##### *Number Game.html*:- This Script will let you play a number game in which you have to guess the number in the give time you can modify the time limits in case you want!
 ---
 
+* ##### *DelArray.js* :- By providing the array as an argument you can delete the value inside it within the specific range if you want to delete that value more than once;
+
+---
+
 * ##### *PostViaAjax.html*:- This Script Allows you to upload any file via ajax to the server without refreshing the page.
 
 ---
