@@ -16,6 +16,14 @@ Simply open the choosen file in the broweser.
 
 ---
 
+* ##### *ArrayFilter.js* :- You Can Filter any Value by the Datatype that Value Holding.
+
+example :- if you want to find out all strings or number you can give array and the datatype like this;
+
+newFilter.fiType(array,"string"|"number","array","object");
+
+---
+
 * ##### *replace.js*:- This Script will Allow you to replace any word from the script within the counter limit.
 
 example:-
