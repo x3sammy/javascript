@@ -1,0 +1,22 @@
+<input type='file' id='upload' name='upload'>
+<input type='button' value='press' id='btn'/>
+<div id='ja'></div>
+<script>
+'use strict';
+var xhr=new XMLHttpRequest();
+document.getElementById('btn').onclick=function(){
+	var fdata=new FormData();
+	var mfile=document.getElementById('upload').files[0];
+	console.log(mfile);
+	fdata.append('file',mfile);
+	fdata.append('btn','btn');
+	xhr.onreadystatechange=function(){
+		if(this.readyState==4&&this.status==200){
+			document.getElementById('ja').innerHTML=this.responseText;
+		}
+	}
+	xhr.open('POST','test.php',true);
+	xhr.send(fdata);
+
+}
+</script>
