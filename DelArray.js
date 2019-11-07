@@ -1,3 +1,9 @@
+/*
+array :- the array from which the value you want to del;
+value :- the value you want to delete;
+times :- how many values you want to delete;
+*/
+
 function delArray(array,value,times){
 		try{
 			if((array==null)&&(value==null)){
