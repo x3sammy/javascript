@@ -24,7 +24,7 @@
 					if(typeof(war[v])=='function'||typeof(war[v])=='number'||typeof(war[v])=='string'){
 						continue;
 					}else{
-						var cr=document.createElement("script");
+						var cr=document.createElement('script');
 						cr.async=true;
 						var no=document.createTextNode(war[v].innerHTML);
 						cr.appendChild(no);
