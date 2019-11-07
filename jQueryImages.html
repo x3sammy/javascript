@@ -1,0 +1,90 @@
+/* 
+rename all the images to image/[1-6].jpg in the folder
+*/
+
+<script src="jquery.js"></script>
+<Script>
+$(document).ready(function(){
+	$("#war").on({
+		click:function(){
+		var x=$(this).attr("src");
+		var r=parseInt($("#timeSelect").val()*1000);
+		if($("#effectSelect").val()=="fade"){
+			$("#xa").fadeOut(r,function(){
+				$(this).attr("src",x).fadeIn(r);
+			})
+		}else{
+			$("#xa").slideUp(r,function(){
+				$(this).attr("src",x).slideDown(r);
+			})
+		}
+	},
+	mouseover:function(){
+		$(this).css("cursor","hand");
+	},
+	mouseout:function(){
+		$(this).css("cursor","pointer")
+	},
+	contextmenu:function(){
+		alert($(this).attr("title"));
+	}
+	},"img")
+})
+</script>
+<style>
+img{
+	width:100px;
+	height:100px;
+}
+#xa{
+	margin-lefT:2px;
+	width:450px;
+	height:400px;
+}
+#war{
+	padding:2px;
+}
+#div1{
+	width:451px;
+	height:401px;
+}
+</style>
+<div id="sa">
+ <select id="effectSelect">
+	<option value="fade">Fade</option>
+	<option value="Slide">Slide</option>
+ </select>
+ <select id="timeSelect">
+	<option value="0.5">0.5 Sec</option>
+	<option value="1">1 Sec</option>
+	<option value="2">2 Sec</option>
+	<option value="3">3 Sec</option>
+	<option value="4">4 Sec</option>
+	<option value="5">5 Sec</option>
+	
+ </select>
+</div>
+<br/>
+<div id="div1">
+<img id="xa" src="images/1.jpg" title="Tiwan City"/>
+</div>
+<div id="war" oncontextmenu="return false">
+<img src="images/1.jpg" title="Tiwan City"/>
+<img src="images/2.jpg" title="Old Church"/>
+<img src="images/3.jpg" title="New York City"/>
+<img src="images/4.jpg" title="Beautiful Grasses"/>
+<img src="images/5.jpg" title="BeautiFul Sunset"/>
+<img src="images/6.jpg" title="City Of Berlin"/>
+</div>
+<script>
+	document.getElementById("war").onclick=function(event){
+		localStorage.svimg=event.target.getAttribute("src");
+		localStorage.save=document.getElementById("effectSelect").value;
+		localStorage.time=document.getElementById("timeSelect").value;
+	};
+		if(localStorage.svimg!=undefined){
+		document.getElementById("xa").setAttribute("src",localStorage.svimg);
+		document.getElementById("effectSelect").value=localStorage.save;
+		document.getElementById("timeSelect").value=localStorage.time;
+	}
+</script>
