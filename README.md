@@ -1,4 +1,4 @@
-## All the codes are written in pure JS. These Code are written without any framework.
+## Most of the Codes are written without any framework.
 
 * ##### *AJAX.php* :- Via this script you can update this page with another page's content without refreshing the browser and having working script of that perticular page.
 
